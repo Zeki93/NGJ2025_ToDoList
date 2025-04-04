@@ -1,3 +1,122 @@
-[gd_scene format=3 uid="uid://uprh1dv4mhsj"]
+[gd_scene load_steps=6 format=3 uid="uid://uprh1dv4mhsj"]
+
+[ext_resource type="PackedScene" uid="uid://fspikrmy6ish" path="res://Scenes/Level/House/wall.tscn" id="1_1r6ip"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_amr5s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1r6ip"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1r6ip"]
+albedo_color = Color(1, 0.309804, 0.00784314, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_lixft"]
 
 [node name="Node3D" type="Node3D"]
+
+[node name="House" type="Node3D" parent="."]
+
+[node name="Groundfloor" type="Node3D" parent="House"]
+
+[node name="Floor" type="Node3D" parent="House/Groundfloor"]
+transform = Transform3D(16, 0, 0, 0, 0.2, 0, 0, 0, 16, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="House/Groundfloor/Floor"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="House/Groundfloor/Floor/StaticBody3D"]
+mesh = SubResource("BoxMesh_amr5s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="House/Groundfloor/Floor/StaticBody3D"]
+shape = SubResource("BoxShape3D_1r6ip")
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="House/Groundfloor"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3, 0)
+
+[node name="Office" type="Node3D" parent="House/Groundfloor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -5)
+
+[node name="Bathroom" type="Node3D" parent="House/Groundfloor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+
+[node name="Kitchen" type="Node3D" parent="House/Groundfloor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -5)
+
+[node name="Walls" type="Node3D" parent="House/Groundfloor"]
+
+[node name="Wall" parent="House/Groundfloor/Walls" instance=ExtResource("1_1r6ip")]
+transform = Transform3D(16, 0, 0, 0, 4, 0, 0, 0, 0.5, 0, 2, -7.75)
+
+[node name="Wall6" parent="House/Groundfloor/Walls" instance=ExtResource("1_1r6ip")]
+transform = Transform3D(6, 0, 0, 0, 4, 0, 0, 0, 0.5, 5, 2, -2)
+
+[node name="Wall10" parent="House/Groundfloor/Walls" instance=ExtResource("1_1r6ip")]
+transform = Transform3D(6, 0, 0, 0, 4, 0, 0, 0, 0.5, 5, 2, 1)
+
+[node name="Wall7" parent="House/Groundfloor/Walls" instance=ExtResource("1_1r6ip")]
+transform = Transform3D(5, 0, 0, 0, 4, 0, 0, 0, 0.5, -2, 2, -2)
+
+[node name="Wall9" parent="House/Groundfloor/Walls" instance=ExtResource("1_1r6ip")]
+transform = Transform3D(-2.62268e-07, 0, 0.5, 0, 4, 0, -6, 0, -2.18557e-08, -1, 2, -5)
+
+[node name="Wall11" parent="House/Groundfloor/Walls" instance=ExtResource("1_1r6ip")]
+transform = Transform3D(-1.5299e-07, 0, 0.5, 0, 4, 0, -3.5, 0, -2.18557e-08, 2, 2, 6)
+
+[node name="Wall13" parent="House/Groundfloor/Walls" instance=ExtResource("1_1r6ip")]
+transform = Transform3D(-8.74228e-08, 0, 0.5, 0, 4, 0, -2, 0, -2.18557e-08, 1, 2, 3.5)
+
+[node name="Wall12" parent="House/Groundfloor/Walls" instance=ExtResource("1_1r6ip")]
+transform = Transform3D(-8.74228e-08, 0, 0.5, 0, 4, 0, -2, 0, -2.18557e-08, 2, 2, 1.75)
+
+[node name="Wall8" parent="House/Groundfloor/Walls" instance=ExtResource("1_1r6ip")]
+transform = Transform3D(2, 0, 0, 0, 4, 0, 0, 0, 0.5, -7, 2, -2)
+
+[node name="Wall3" parent="House/Groundfloor/Walls" instance=ExtResource("1_1r6ip")]
+transform = Transform3D(-6.99382e-07, 0, 0.5, 0, 4, 0, -16, 0, -2.18557e-08, -8, 2, 0)
+
+[node name="Wall4" parent="House/Groundfloor/Walls" instance=ExtResource("1_1r6ip")]
+transform = Transform3D(-2.62268e-07, 0, 0.5, 0, 4, 0, -6, 0, -2.18557e-08, 7.75, 2, -5)
+
+[node name="Wall5" parent="House/Groundfloor/Walls" instance=ExtResource("1_1r6ip")]
+transform = Transform3D(-3.0598e-07, 0, 0.5, 0, 4, 0, -7, 0, -2.18557e-08, 7.75, 2, 4.5)
+
+[node name="Wall2" parent="House/Groundfloor/Walls" instance=ExtResource("1_1r6ip")]
+transform = Transform3D(16, 0, 0, 0, 4, 0, 0, 0, 0.5, 0, 2, 7.75)
+
+[node name="Firstfloor" type="Node3D" parent="House"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 0)
+visible = false
+
+[node name="Floor" type="Node3D" parent="House/Firstfloor"]
+transform = Transform3D(16, 0, 0, 0, 0.2, 0, 0, 0, 16, 0, 4, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="House/Firstfloor/Floor"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="House/Firstfloor/Floor/StaticBody3D"]
+mesh = SubResource("BoxMesh_amr5s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="House/Firstfloor/Floor/StaticBody3D"]
+shape = SubResource("BoxShape3D_1r6ip")
+
+[node name="walls" type="Node3D" parent="House/Firstfloor/Floor"]
+
+[node name="Wall6" parent="House/Firstfloor/Floor/walls" instance=ExtResource("1_1r6ip")]
+transform = Transform3D(1, 0, 0, 0, 20, 0, 0, 0, 0.03125, 0, 10, -0.484375)
+
+[node name="Wall7" parent="House/Firstfloor/Floor/walls" instance=ExtResource("1_1r6ip")]
+transform = Transform3D(-4.37114e-08, 0, 0.03125, 0, 20, 0, -1, 0, -1.36598e-09, 0.5, 10, 0)
+
+[node name="Wall8" parent="House/Firstfloor/Floor/walls" instance=ExtResource("1_1r6ip")]
+transform = Transform3D(-1.63918e-08, 0, 0.03125, 0, 20, 0, -0.375, 0, -1.36598e-09, -0.5, 10, -0.3125)
+
+[node name="Wall9" parent="House/Firstfloor/Floor/walls" instance=ExtResource("1_1r6ip")]
+transform = Transform3D(-1.63918e-08, 0, 0.03125, 0, 20, 0, -0.375, 0, -1.36598e-09, -0.5, 10, 0.3125)
+
+[node name="Wall10" parent="House/Firstfloor/Floor/walls" instance=ExtResource("1_1r6ip")]
+transform = Transform3D(1, 0, 0, 0, 20, 0, 0, 0, 0.03125, 0, 10, 0.484375)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="House/Firstfloor"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 6, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="House"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -6)
+material_override = SubResource("StandardMaterial3D_1r6ip")
+mesh = SubResource("CapsuleMesh_lixft")
