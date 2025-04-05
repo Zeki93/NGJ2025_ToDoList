@@ -11,6 +11,7 @@
 script = ExtResource("1_a3d8c")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_tugb3")
 
 [node name="PlayerController" type="Node" parent="."]
@@ -22,7 +23,7 @@ metadata/_custom_type_script = "uid://bh54i8dw1hltd"
 [node name="Eyes" type="Node3D" parent="Head"]
 
 [node name="Camera3D" type="Camera3D" parent="Head/Eyes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.34, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.212061, 0)
 
 [node name="RayCast3D" type="RayCast3D" parent="Head/Eyes/Camera3D"]
 script = ExtResource("3_m62op")
