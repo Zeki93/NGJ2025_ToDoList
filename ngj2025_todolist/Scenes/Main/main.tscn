@@ -23,7 +23,7 @@ sky = SubResource("Sky_5yls4")
 tonemap_mode = 2
 glow_enabled = true
 
-[node name="Node3D" type="Node3D"]
+[node name="Node3D2" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_p6jpk")
@@ -1083,10 +1083,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -1)
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_top = 283.0
+offset_right = 1136.0
+offset_bottom = 909.0
 
 [node name="EnergyBar" parent="UI" instance=ExtResource("5_p6jpk")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 49.01
+anchor_bottom = 27.594
+offset_right = 9.59985
+offset_bottom = -1063.76
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
