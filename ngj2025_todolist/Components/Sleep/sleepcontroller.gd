@@ -1,7 +1,7 @@
 extends Node3D
 
 var playerEnergy = 0
-@export var tiredNess = 10
+@export var tiredNess = 0.1
 @export var energyRecoveryOnFloor = 50
 var sleeping = false
 
