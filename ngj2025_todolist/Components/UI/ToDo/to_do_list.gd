@@ -5,7 +5,7 @@ extends Control
 # task list -> object
 var task_list:Dictionary[String, ToDoItem] = {}
 
-const TO_DO_ITEM = preload("res://Components/UI/ToDoItem.tscn")
+const TO_DO_ITEM = preload("res://Components/UI/ToDo/ToDoItem.tscn")
 
 func _ready() -> void:
 	SignalBus.connect("task_added", _add_task)
