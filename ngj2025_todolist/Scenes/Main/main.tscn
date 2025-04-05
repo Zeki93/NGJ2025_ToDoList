@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://uprh1dv4mhsj"]
+[gd_scene load_steps=8 format=3 uid="uid://uprh1dv4mhsj"]
 
 [ext_resource type="PackedScene" uid="uid://fspikrmy6ish" path="res://Scenes/Level/House/wall.tscn" id="1_1r6ip"]
 [ext_resource type="PackedScene" uid="uid://behmq4ilq0dq6" path="res://Scenes/Level/House/floor.tscn" id="1_lixft"]
+[ext_resource type="PackedScene" uid="uid://byiuluoiyl0fp" path="res://Components/Task/Task.tscn" id="3_5yls4"]
 [ext_resource type="PackedScene" uid="uid://dtox4xiwhrksa" path="res://Components/Player/player.tscn" id="3_qw60k"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qw60k"]
@@ -102,6 +103,9 @@ transform = Transform3D(-2.62268e-07, 0, 0.5, 0, 1, 0, -6, 0, -2.18557e-08, 0, 3
 
 [node name="Wall17" parent="House/Groundfloor/Doorframes" instance=ExtResource("1_1r6ip")]
 transform = Transform3D(-2.62268e-07, 0, 0.5, 0, 1, 0, -6, 0, -2.18557e-08, 2, 3.5, 5)
+
+[node name="Task1" parent="House/Groundfloor" instance=ExtResource("3_5yls4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1, 2)
 
 [node name="Firstfloor" type="Node3D" parent="House"]
 
