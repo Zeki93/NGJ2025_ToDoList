@@ -1,6 +1,5 @@
 extends Node3D
 
-var playerEnergy = 0
 @export var tiredNess = 0.1
 @export var energyRecoveryOnFloor = 50
 var sleeping = false
@@ -26,12 +25,12 @@ func _on_go_to_sleep(energy):
 	pass
 
 func _on_new_energy_level(energy):
-	playerEnergy = energy
+	GlobalConfig.playerEnergy = energy
 	if(!sleeping):
 		if(energy < 0):
 			SignalBus.go_to_sleep.emit(energyRecoveryOnFloor)
 
 func _on_timer_timeout() -> void:
 	if(!sleeping):
-		playerEnergy -= tiredNess
-		SignalBus.new_energy_level.emit(playerEnergy)
+		GlobalConfig.playerEnergy -= tiredNess
+		SignalBus.new_energy_level.emit(GlobalConfig.playerEnergy)

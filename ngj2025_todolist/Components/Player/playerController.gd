@@ -70,7 +70,7 @@ func _input(event):
 		var selected_object = null
 		
 		if viewed_object and viewed_object.global_position.distance_to(player.global_position) <= max_interact_distance:
-			selected_object = viewed_object.get_node("..")
+			selected_object = viewed_object
 			print_debug("clicked: ",selected_object)
 		
 		if  selected_object and selected_object.has_method("do_task"):

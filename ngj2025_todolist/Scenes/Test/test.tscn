@@ -1086,6 +1086,7 @@ transform = Transform3D(22, 0, 0, 0, 0.2, 0, 0, 0, 22, 0, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -1)
 
 [node name="Sleepcontroller" parent="." instance=ExtResource("5_2tqmh")]
+tiredNess = 0.2
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
@@ -1111,6 +1112,7 @@ script = ExtResource("8_jpfus")
 [node name="Task" type="StaticBody3D" parent="Taskcontroller"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -4)
 script = ExtResource("9_2tqmh")
+cost = 20
 task_name = "Kill a goat"
 metadata/_custom_type_script = "uid://il2mj2e7ekms"
 
@@ -1122,6 +1124,7 @@ shape = SubResource("ConcavePolygonShape3D_qhjy2")
 
 [node name="Task2" type="StaticBody3D" parent="Taskcontroller"]
 script = ExtResource("9_2tqmh")
+cost = 40
 task_name = "Sleep"
 metadata/_custom_type_script = "uid://il2mj2e7ekms"
 

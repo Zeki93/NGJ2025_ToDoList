@@ -4,6 +4,7 @@ var task_arena = []
 
 func _ready():
 	SignalBus.taskcontroller_add_random_task.connect(add_random_task)
+	SignalBus.complete_task.connect(complete_task)
 	
 	for child in self.get_children():
 		task_arena.push_front(child)
@@ -19,6 +20,6 @@ func add_random_task():
 	
 
 func complete_task(task_name):
-	for child in self.get_children():
-		if child.name == task_name:
+	for child: Task in self.get_children():
+		if child.task_name == task_name:
 			remove_child(child)
