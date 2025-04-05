@@ -5,7 +5,6 @@ extends Node
 @onready var head: Node3D = $"../Head"
 @onready var eyes: Node3D = $"../Head/Eyes"
 @onready var interactor_cast: RayCast3D = $"../Head/Eyes/Camera3D/RayCast3D"
-@onready var debug_box: MeshInstance3D = $"../Head/Eyes/Camera3D/RayCast3D/DebugBox"
 @onready var crosshair: TextureRect = $"../CanvasLayer/CenterContainer/Crosshair"
 
 @export var wobble_amount_scale = 0.01
