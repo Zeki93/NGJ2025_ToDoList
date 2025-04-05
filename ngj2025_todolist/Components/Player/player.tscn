@@ -20,4 +20,4 @@ metadata/_custom_type_script = "uid://bh54i8dw1hltd"
 [node name="Eyes" type="Node3D" parent="Head"]
 
 [node name="Camera3D" type="Camera3D" parent="Head/Eyes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.66, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.34, 0)
