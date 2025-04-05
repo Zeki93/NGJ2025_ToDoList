@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://byiuluoiyl0fp"]
 
-[ext_resource type="Script" uid="uid://il2mj2e7ekms" path="res://Components/Task/task.gd" id="1_pga75"]
+[ext_resource type="Script" uid="uid://il2mj2e7ekms" path="res://Components/Taskcontroller/task.gd" id="1_pga75"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pr8ft"]
 albedo_color = Color(1, 1, 0.0901961, 1)

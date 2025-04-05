@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://80li0v7tt73b"]
+
+[ext_resource type="ArrayMesh" uid="uid://vtpfxce1vus0" path="res://3D Objects/obj/rug_oval_A.obj" id="1_fei05"]
+
+[node name="Brown_rug" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_fei05")

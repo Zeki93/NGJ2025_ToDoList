@@ -10,6 +10,9 @@ func _ready():
 		task_arena.push_front(child)
 		remove_child(child)
 	add_random_task()
+	add_random_task()
+	add_random_task()
+	
 
 func add_random_task():
 	if(!task_arena.is_empty()):

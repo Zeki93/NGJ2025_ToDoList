@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://becyxk5xwtqi8" path="res://Scenes/UI/energy_bar.tscn" id="6_67c88"]
 [ext_resource type="PackedScene" uid="uid://b555mvw8jejng" path="res://Components/UI/ToDoList.tscn" id="6_qhjy2"]
 [ext_resource type="Script" uid="uid://csquxobd6utgo" path="res://Components/Timer/timer.gd" id="7_qhjy2"]
-[ext_resource type="Script" uid="uid://b33q27jll3vjg" path="res://Components/Task/task_controller.gd" id="8_jpfus"]
-[ext_resource type="Script" uid="uid://il2mj2e7ekms" path="res://Components/Task/task.gd" id="9_2tqmh"]
+[ext_resource type="Script" uid="uid://b33q27jll3vjg" path="res://Components/Taskcontroller/task_controller.gd" id="8_jpfus"]
+[ext_resource type="Script" uid="uid://il2mj2e7ekms" path="res://Components/Taskcontroller/task.gd" id="9_2tqmh"]
 [ext_resource type="ArrayMesh" uid="uid://dt87nauhbjlce" path="res://3D Objects/obj/bed_single_A.obj" id="10_2tqmh"]
 [ext_resource type="ArrayMesh" uid="uid://yf6lxbqa8qqg" path="res://3D Objects/obj/book_single.obj" id="10_67c88"]
 
