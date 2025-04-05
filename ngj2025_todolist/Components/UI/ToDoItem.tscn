@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjkx61hay16bq"]
+
+[ext_resource type="Theme" uid="uid://dmxn3myerqldl" path="res://Theme/design_theme.tres" id="1_6knwg"]
+[ext_resource type="Script" uid="uid://hdvbi5w558yt" path="res://Components/UI/to_do_item.gd" id="2_6lii2"]
+
+[node name="ToDoItem" type="RichTextLabel"]
+custom_minimum_size = Vector2(0, 20)
+theme = ExtResource("1_6knwg")
+bbcode_enabled = true
+text = "TASKTASKTASK"
+scroll_active = false
+shortcut_keys_enabled = false
+script = ExtResource("2_6lii2")

@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://becyxk5xwtqi8"]
+
+[ext_resource type="Script" uid="uid://dy44lfomrfo1w" path="res://Scenes/UI/EnergyBar.gd" id="1_o2m25"]
+
+[node name="EnergyBar" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_o2m25")
+
+[node name="GreenPart" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 1107.0
+offset_top = 599.0
+offset_right = 1147.0
+offset_bottom = 899.0
+rotation = 3.14159
+color = Color(0.333333, 1, 0, 1)
+
+[node name="RedPart" type="ColorRect" parent="GreenPart"]
+show_behind_parent = true
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 300.0
+color = Color(1, 0, 0, 1)

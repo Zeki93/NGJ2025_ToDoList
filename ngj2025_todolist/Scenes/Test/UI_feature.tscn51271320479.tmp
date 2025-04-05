@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://wrbfi6egfplu"]
+
+[ext_resource type="PackedScene" uid="uid://becyxk5xwtqi8" path="res://Scenes/UI/energy_bar.tscn" id="1_2qdkj"]
+[ext_resource type="Script" uid="uid://crn0w2rarbuhb" path="res://Scenes/Test/tester.gd" id="2_2qdkj"]
+[ext_resource type="PackedScene" uid="uid://b555mvw8jejng" path="res://Components/UI/ToDoList.tscn" id="3_mhcd7"]
+
+[node name="UiFeature" type="Node3D"]
+
+[node name="EnergyBar" parent="." instance=ExtResource("1_2qdkj")]
+offset_left = 739.0
+offset_top = 381.0
+offset_right = 739.0
+offset_bottom = 381.0
+
+[node name="Tester" type="Node" parent="."]
+script = ExtResource("2_2qdkj")
+
+[node name="ToDoListPage" parent="." instance=ExtResource("3_mhcd7")]
