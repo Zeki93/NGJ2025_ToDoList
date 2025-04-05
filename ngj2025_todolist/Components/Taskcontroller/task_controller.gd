@@ -41,9 +41,9 @@ func do_task(task):
 			GlobalConfig.playerEnergy -= task.cost
 			SignalBus.new_energy_level.emit(GlobalConfig.playerEnergy)
 			complete_task(taskInTodo)
-		else:
-			GlobalConfig.playerEnergy -= peneltyCost
-			SignalBus.new_energy_level.emit(GlobalConfig.playerEnergy)
+			return
+	GlobalConfig.playerEnergy -= peneltyCost
+	SignalBus.new_energy_level.emit(GlobalConfig.playerEnergy)
 
 func complete_task(task):
 	currentTaskArray.erase(task)
