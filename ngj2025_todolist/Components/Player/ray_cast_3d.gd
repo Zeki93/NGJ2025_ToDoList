@@ -2,8 +2,6 @@ extends RayCast3D
 
 const RAY_LENGTH = 1.0
 
-@onready var debug_box: MeshInstance3D = $DebugBox
-
 func _ready():
 	#self.set_collision_mask_value(1, false)
 	#self.set_collision_mask_value(2, true)
@@ -20,10 +18,6 @@ func _physics_process(_delta: float):
 	
 	self.target_position = Vector3(0,0,-100)
 	
-	if(self.is_colliding()):
-		var hit_point = self.get_collision_point()
-		debug_box.position = hit_point
-		#var colliding_object = self.get_collider()
 	pass
 
 

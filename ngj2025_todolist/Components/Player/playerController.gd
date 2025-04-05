@@ -6,6 +6,7 @@ extends Node
 @onready var eyes: Node3D = $"../Head/Eyes"
 @onready var interactor_cast: RayCast3D = $"../Head/Eyes/Camera3D/RayCast3D"
 @onready var debug_box: MeshInstance3D = $"../Head/Eyes/Camera3D/RayCast3D/DebugBox"
+@onready var crosshair: TextureRect = $"../CanvasLayer/CenterContainer/Crosshair"
 
 @export var wobble_amount_scale = 0.01
 @export var wobble_time_scale = 0.15
@@ -52,13 +53,13 @@ func _process(delta):
 	eyes.basis = Basis.looking_at(Vector3.FORWARD, Vector3.UP).rotated(Vector3.FORWARD, sin(wobble_time) * wobble_amount_scale)
 	
 	viewed_object = interactor_cast.get_collider()
-	if viewed_object == null:
-			debug_box.transparency = 1
+	if viewed_object == null || !viewed_object.has_method("do_task"):
+			crosshair.modulate = Color(0.9, 0.9, 0.9, 0.7)
 	else:
 		if viewed_object.global_position.distance_to(player.global_position) < max_interact_distance:
-			debug_box.transparency = 0.5
+			crosshair.modulate = Color(0.0, 0.9, 0.0, 0.8)
 		else:
-			debug_box.transparency = 0
+			crosshair.modulate = Color(0.7, 0.8, 0.0, 0.7)
 
 func _input(event):
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
