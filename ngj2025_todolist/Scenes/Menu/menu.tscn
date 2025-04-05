@@ -27,8 +27,8 @@ anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -958.0
 offset_top = 46.0
-offset_right = 958.0
-offset_bottom = 666.0
+offset_right = 960.0
+offset_bottom = 412.0
 grow_horizontal = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/TitleBoxContainer"]
@@ -48,7 +48,7 @@ layout_mode = 2
 layout_mode = 2
 theme = ExtResource("2_3qr6s")
 theme_type_variation = &"HeaderLarge"
-text = "ToDo"
+text = "Too Much To Do"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -56,7 +56,7 @@ vertical_alignment = 1
 layout_mode = 2
 theme = ExtResource("2_3qr6s")
 theme_type_variation = &"HeaderMedium"
-text = "- The Game"
+text = "- The ToDo List Game"
 horizontal_alignment = 1
 vertical_alignment = 1
 

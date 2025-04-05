@@ -6,7 +6,6 @@ func _ready():
 	#self.set_collision_mask_value(1, false)
 	#self.set_collision_mask_value(2, true)
 	self.collision_mask = 1 | 2
-	print(self.collision_mask)
 	pass
 	
 func _physics_process(_delta: float):
@@ -26,4 +25,3 @@ func _input(event):
 		var camera3d = $".."
 		var from = camera3d.project_ray_origin(event.position)
 		var to = from + camera3d.project_ray_normal(event.position) * RAY_LENGTH
-		print(to)
