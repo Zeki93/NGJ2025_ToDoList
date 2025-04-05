@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://b555mvw8jejng"]
 
 [ext_resource type="Theme" uid="uid://dmxn3myerqldl" path="res://Theme/design_theme.tres" id="1_feto0"]
-[ext_resource type="Script" uid="uid://b3bi2q08rwlyv" path="res://Components/UI/to_do_list.gd" id="1_kyyg4"]
-[ext_resource type="PackedScene" uid="uid://cjkx61hay16bq" path="res://Components/UI/ToDoItem.tscn" id="2_kyyg4"]
+[ext_resource type="Script" uid="uid://b3bi2q08rwlyv" path="res://Components/UI/ToDo/to_do_list.gd" id="1_kyyg4"]
+[ext_resource type="PackedScene" uid="uid://cjkx61hay16bq" path="res://Components/UI/ToDo/ToDoItem.tscn" id="2_kyyg4"]
 
 [node name="ToDoListPage" type="Control"]
 layout_mode = 3
