@@ -4,15 +4,24 @@
 
 [node name="EnergyBar" type="Control"]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
 script = ExtResource("1_o2m25")
 
 [node name="GreenPart" type="ColorRect" parent="."]
-layout_mode = 0
-offset_left = 1107.0
-offset_top = 599.0
-offset_right = 1147.0
-offset_bottom = 899.0
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -300.0
+offset_top = 320.0
+offset_right = -260.0
+offset_bottom = 620.0
+grow_horizontal = 0
 rotation = 3.14159
 color = Color(0.333333, 1, 0, 1)
 

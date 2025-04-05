@@ -1226,14 +1226,20 @@ anchors_preset = -1
 anchor_left = 0.5
 anchor_right = 49.01
 anchor_bottom = 27.594
-offset_left = 236.0
-offset_top = 59.0
-offset_right = 245.602
-offset_bottom = -1004.76
+offset_left = -568.0
+offset_top = -283.0
+offset_right = -53755.4
+offset_bottom = -16476.8
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ToDoListPage" parent="UI" instance=ExtResource("6_hfg1r")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.00264085
+anchor_top = -0.0607029
+anchor_right = 1.65757
+anchor_bottom = 1.60064
 offset_left = -3.0
 offset_top = -245.0
 offset_right = 37.0

@@ -1,6 +1,6 @@
 extends Control
 
-@onready var to_do_items_container: VBoxContainer = $"ToDoPanel/ToDoItems Container"
+@onready var to_do_items_container: VBoxContainer = $"ToDoPanel/MarginContainer/ToDoItems Container"
 
 # task list -> object
 var task_list:Dictionary[String, ToDoItem] = {}
