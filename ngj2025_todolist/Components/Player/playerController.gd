@@ -55,7 +55,9 @@ func _process(delta):
 	if viewed_object == null || !viewed_object.has_method("do_task"):
 			crosshair.modulate = Color(0.9, 0.9, 0.9, 0.7)
 	else:
-		if viewed_object.global_position.distance_to(player.global_position) < max_interact_distance:
+		if false: #if item is not on todolist?
+			crosshair.modulate = Color(0.9, 0.1, 0.1, 0.8)
+		elif viewed_object.global_position.distance_to(player.global_position) < max_interact_distance:
 			crosshair.modulate = Color(0.0, 0.9, 0.0, 0.8)
 		else:
 			crosshair.modulate = Color(0.7, 0.8, 0.0, 0.7)
