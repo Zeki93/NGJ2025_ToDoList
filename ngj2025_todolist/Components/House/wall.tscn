@@ -1,19 +1,21 @@
 [gd_scene load_steps=4 format=3 uid="uid://fspikrmy6ish"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ckn6m"]
-albedo_color = Color(1, 0, 1, 1)
+[ext_resource type="Material" uid="uid://bbq41k66kjmr0" path="res://Textures/wall.tres" id="1_5ysgx"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ckn6m"]
+size = Vector3(1, 4, 0.2)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_5ysgx"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5ysgx"]
+points = PackedVector3Array(-0.5, -2, -0.1, -0.5, -2, 0.1, -0.5, 2, -0.1, 0.5, -2, -0.1, 0.5, -2, 0.1, -0.5, 2, 0.1, 0.5, 2, -0.1, 0.5, 2, 0.1)
 
 [node name="Wall" type="Node3D"]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 2, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
-material_override = SubResource("StandardMaterial3D_ckn6m")
+material_override = ExtResource("1_5ysgx")
 mesh = SubResource("BoxMesh_ckn6m")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-shape = SubResource("BoxShape3D_5ysgx")
+shape = SubResource("ConvexPolygonShape3D_5ysgx")

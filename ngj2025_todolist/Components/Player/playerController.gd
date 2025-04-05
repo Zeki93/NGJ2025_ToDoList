@@ -4,11 +4,6 @@ extends Node
 @onready var player: CharacterBody3D = $".."
 @onready var head: Node3D = $"../Head"
 @onready var eyes: Node3D = $"../Head/Eyes"
-#@onready var hand_target: Node3D = $"../Head/Eyes/HandTarget"
-#@onready var collision_shape_3d: CollisionShape3D = $"../CollisionShape3D"
-#@onready var collider: Shape3D = collision_shape_3d.shape
-#@onready var interactor_cast: RayCast3D = $"../Head/Eyes/InteractorCast"
-#@onready var crosshair: TextureRect = $"../CanvasLayer/CenterContainer/Crosshair"
 
 @export var wobble_amount_scale = 0.01
 @export var wobble_time_scale = 0.15
@@ -59,14 +54,3 @@ func _input(event):
 		player.rotate_y( - event.relative.x * mouse_sensitivity)
 		head.rotate_x( - event.relative.y * mouse_sensitivity)
 		head.rotation.x = clampf(head.rotation.x, -deg_to_rad(70), deg_to_rad(70))
-		
-	#if event is InputEventMouseButton and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED and Input.get_mouse_button_mask() & MOUSE_BUTTON_MASK_LEFT != 0:
-		#var viewed_object_p = null
-		#
-		#if viewed_object and viewed_object.global_position.distance_to(player.global_position) <= max_interact_distance:
-			#viewed_object_p = viewed_object.get_node("..")
-		#
-		#if viewed_object_p and viewed_object_p.has_method("activate_scene"):
-			#active_scene = viewed_object_p
-		#elif viewed_object_p and viewed_object_p.has_method("interact"):
-			#viewed_object_p.interact(self)
