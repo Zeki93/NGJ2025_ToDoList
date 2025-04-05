@@ -4,6 +4,8 @@ extends Node
 @onready var player: CharacterBody3D = $".."
 @onready var head: Node3D = $"../Head"
 @onready var eyes: Node3D = $"../Head/Eyes"
+@onready var interactor_cast: RayCast3D = $"../Head/Eyes/Camera3D/RayCast3D"
+@onready var debug_box: MeshInstance3D = $"../Head/Eyes/Camera3D/RayCast3D/DebugBox"
 
 @export var wobble_amount_scale = 0.01
 @export var wobble_time_scale = 0.15
@@ -48,9 +50,28 @@ func _process(delta):
 	head.transform.origin.y = clampf(head.transform.origin.y, camera_height_crouched, camera_height_standing)
 	
 	eyes.basis = Basis.looking_at(Vector3.FORWARD, Vector3.UP).rotated(Vector3.FORWARD, sin(wobble_time) * wobble_amount_scale)
+	
+	viewed_object = interactor_cast.get_collider()
+	if viewed_object == null:
+			debug_box.transparency = 1
+	else:
+		if viewed_object.global_position.distance_to(player.global_position) < max_interact_distance:
+			debug_box.transparency = 0.5
+		else:
+			debug_box.transparency = 0
 
 func _input(event):
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		player.rotate_y( - event.relative.x * mouse_sensitivity)
 		head.rotate_x( - event.relative.y * mouse_sensitivity)
 		head.rotation.x = clampf(head.rotation.x, -deg_to_rad(70), deg_to_rad(70))
+		
+	if event is InputEventMouseButton and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED and Input.get_mouse_button_mask() & MOUSE_BUTTON_MASK_LEFT != 0:
+		var selected_object = null
+		
+		if viewed_object and viewed_object.global_position.distance_to(player.global_position) <= max_interact_distance:
+			selected_object = viewed_object.get_node("..")
+			print_debug("clicked: ",selected_object)
+		
+		if  selected_object and selected_object.has_method("do_task"):
+			selected_object.do_task()

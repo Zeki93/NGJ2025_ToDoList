@@ -1,4 +1,9 @@
 extends Node3D
 
+class_name Task
+
 @export var cost = 0
-@export var taskName = ""
+@export var task_name = ""
+
+func do_task():
+	print_debug("Task done!")
