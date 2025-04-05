@@ -14,15 +14,10 @@ func _ready():
 	SignalBus.wake_up.connect(_on_wake_up)
 
 func _physics_process(delta):
-<<<<<<< Updated upstream
-	
-	velocity += acceleration * delta
-=======
 	if(sleeping):
 		velocity = Vector3.ZERO
 	if(!sleeping):
 		check_player_movement(delta)
->>>>>>> Stashed changes
 
 func check_player_movement(delta):
 	velocity += acceleration * delta
