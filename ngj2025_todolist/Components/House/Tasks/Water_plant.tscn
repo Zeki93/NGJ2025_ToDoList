@@ -9,7 +9,7 @@ data = PackedVector3Array(-0.07, 0.3, -0.1689, -0.0961, 0.3, -0.232, 0.07, 0.3, 
 [node name="Water_plant" type="StaticBody3D"]
 script = ExtResource("1_t7n13")
 cost = 10
-task_name = "Water plant"
+task_name = "Water the plant"
 metadata/_custom_type_script = "uid://il2mj2e7ekms"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

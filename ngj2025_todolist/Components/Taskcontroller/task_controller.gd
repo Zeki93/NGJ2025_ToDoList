@@ -12,7 +12,9 @@ func _ready():
 	add_random_task()
 	add_random_task()
 	add_random_task()
-	
+	add_random_task()
+	add_random_task()
+	add_random_task()
 
 func add_random_task():
 	if(!task_arena.is_empty()):
