@@ -1,12 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://uprh1dv4mhsj"]
+[gd_scene load_steps=10 format=3 uid="uid://uprh1dv4mhsj"]
 
 [ext_resource type="PackedScene" uid="uid://fspikrmy6ish" path="res://Components/House/wall.tscn" id="1_1r6ip"]
 [ext_resource type="PackedScene" uid="uid://behmq4ilq0dq6" path="res://Components/House/floor.tscn" id="1_lixft"]
 [ext_resource type="PackedScene" uid="uid://byiuluoiyl0fp" path="res://Components/Task/Task.tscn" id="3_5yls4"]
 [ext_resource type="PackedScene" uid="uid://dtox4xiwhrksa" path="res://Components/Player/player.tscn" id="3_qw60k"]
 [ext_resource type="PackedScene" uid="uid://becyxk5xwtqi8" path="res://Scenes/UI/energy_bar.tscn" id="5_p6jpk"]
-[ext_resource type="PackedScene" uid="uid://cro7j32e1ykw6" path="res://Components/Sleep/sleepcontroller.tscn" id="5_xlvfx"]
-[ext_resource type="Script" uid="uid://csquxobd6utgo" path="res://Components/Timer/timer.gd" id="7_xlvfx"]
+[ext_resource type="Script" uid="uid://btyn50rg7jjao" path="res://Components/Sleep/sleepcontroller.gd" id="5_xlvfx"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qw60k"]
 sky_top_color = Color(0.519352, 0.690558, 0.915113, 1)
@@ -36,7 +35,6 @@ environment = SubResource("Environment_p6jpk")
 
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="House/Groundfloor"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3, 0)
-shadow_enabled = true
 
 [node name="Office" type="Node3D" parent="House/Groundfloor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -5)
@@ -115,7 +113,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1, 2)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="House/Firstfloor"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 19, 6, 0)
-shadow_enabled = true
 
 [node name="walls" type="Node3D" parent="House/Firstfloor"]
 
@@ -212,7 +209,8 @@ transform = Transform3D(16, 0, 0, 0, 0.2, 0, 0, 0, 16, -1.4, 12, 0)
 [node name="Player" parent="." instance=ExtResource("3_qw60k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -1)
 
-[node name="Sleepcontroller" parent="." instance=ExtResource("5_xlvfx")]
+[node name="Sleepcontroller" type="Node3D" parent="."]
+script = ExtResource("5_xlvfx")
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
@@ -222,5 +220,4 @@ offset_bottom = 40.0
 
 [node name="EnergyBar" parent="UI" instance=ExtResource("5_p6jpk")]
 
-[node name="Timer" type="Timer" parent="."]
-script = ExtResource("7_xlvfx")
+[node name="Timer" type="Node3D" parent="."]

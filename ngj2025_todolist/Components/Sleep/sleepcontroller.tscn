@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cro7j32e1ykw6"]
+
+[ext_resource type="Script" uid="uid://btyn50rg7jjao" path="res://Components/Sleep/sleepcontroller.gd" id="1_0xayh"]
+
+[node name="Sleepcontroller" type="Node3D"]
+script = ExtResource("1_0xayh")
