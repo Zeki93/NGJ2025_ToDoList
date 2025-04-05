@@ -8,9 +8,9 @@ var task_list:Dictionary[String, ToDoItem] = {}
 const TO_DO_ITEM = preload("res://Components/UI/ToDo/ToDoItem.tscn")
 
 func _ready() -> void:
-	SignalBus.connect("task_added", _add_task)
-	SignalBus.connect("complete_task", _complete_task)
-	SignalBus.connect("clear_completed_tasks", _clear_completed_tasks)
+	SignalBus.connect("ui_task_added", _add_task)
+	SignalBus.connect("ui_complete_task", _complete_task)
+	SignalBus.connect("ui_clear_completed_tasks", _clear_completed_tasks)
 
 func _add_task(task_name:String):
 	if task_list.has(task_name):

@@ -7,8 +7,14 @@ signal go_to_sleep(new_energy:int)
 signal on_sleeptransition_finished()
 signal wake_up()
 
+signal taskcontroller_go_to_sleep()
+signal taskcontroller_do_task(task: Task)
 signal taskcontroller_add_random_task()
+signal taskcontroller_complete_task(task_name: String)
 
-signal task_added(task_name:String)
-signal complete_task(task_name: String)
-signal clear_completed_tasks()
+signal ui_task_added(task_name:String)
+signal ui_complete_task(task_name: String)
+signal ui_clear_completed_tasks()
+
+signal winGame()
+signal looseGame()
