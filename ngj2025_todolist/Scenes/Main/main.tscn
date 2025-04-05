@@ -33,6 +33,7 @@ environment = SubResource("Environment_p6jpk")
 
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="House/Groundfloor"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3, 0)
+shadow_enabled = true
 
 [node name="Office" type="Node3D" parent="House/Groundfloor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -5)
@@ -111,6 +112,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1, 2)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="House/Firstfloor"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 19, 6, 0)
+shadow_enabled = true
 
 [node name="walls" type="Node3D" parent="House/Firstfloor"]
 

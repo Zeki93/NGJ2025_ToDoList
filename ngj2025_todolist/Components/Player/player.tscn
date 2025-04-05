@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dtox4xiwhrksa"]
+[gd_scene load_steps=6 format=3 uid="uid://dtox4xiwhrksa"]
 
 [ext_resource type="Script" uid="uid://f0nm88xrta1f" path="res://Components/Player/player.gd" id="1_a3d8c"]
 [ext_resource type="Script" uid="uid://bh54i8dw1hltd" path="res://Components/Player/playerController.gd" id="1_uvnfx"]
 [ext_resource type="Script" uid="uid://dahvgjgmyn8gx" path="res://Components/Player/ray_cast_3d.gd" id="3_m62op"]
+[ext_resource type="PackedScene" uid="uid://br8anmfmbtahh" path="res://Components/DEBUG/debug_box.tscn" id="4_rid5b"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tugb3"]
 
@@ -25,3 +26,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.34, 0)
 
 [node name="RayCast3D" type="RayCast3D" parent="Head/Eyes/Camera3D"]
 script = ExtResource("3_m62op")
+
+[node name="DebugBox" parent="Head/Eyes/Camera3D/RayCast3D" instance=ExtResource("4_rid5b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.34, 0)
+top_level = true
