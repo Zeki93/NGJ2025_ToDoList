@@ -23,6 +23,7 @@ func _physics_process(delta):
 	velocity *= drag_factor
 	
 	move_and_slide()
+	
 
 func _on_failed_event():
 	playerController.exitPuzzle();

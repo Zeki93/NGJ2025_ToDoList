@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dtox4xiwhrksa"]
+[gd_scene load_steps=5 format=3 uid="uid://dtox4xiwhrksa"]
 
 [ext_resource type="Script" uid="uid://f0nm88xrta1f" path="res://Components/Player/player.gd" id="1_a3d8c"]
 [ext_resource type="Script" uid="uid://bh54i8dw1hltd" path="res://Components/Player/playerController.gd" id="1_uvnfx"]
+[ext_resource type="Script" uid="uid://dahvgjgmyn8gx" path="res://Components/Player/ray_cast_3d.gd" id="3_m62op"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tugb3"]
 
@@ -21,3 +22,6 @@ metadata/_custom_type_script = "uid://bh54i8dw1hltd"
 
 [node name="Camera3D" type="Camera3D" parent="Head/Eyes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.34, 0)
+
+[node name="RayCast3D" type="RayCast3D" parent="Head/Eyes/Camera3D"]
+script = ExtResource("3_m62op")
