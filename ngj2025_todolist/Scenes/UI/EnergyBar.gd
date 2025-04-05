@@ -4,11 +4,10 @@ extends Node
 
 func _ready() -> void:
 	SignalBus.new_energy_level.connect(_on_new_energy_level)
-
+	
 func _on_new_energy_level(energy):
-	if not greenPart:
-		var timer = get_tree().create_timer(.1)
-		timer.connect("timeout", _on_new_energy_level(energy))
-		return
+	show_energy(energy)
+	
+func show_energy(energy):
 	greenPart.set_size(Vector2(40, energy * 3))
 	return

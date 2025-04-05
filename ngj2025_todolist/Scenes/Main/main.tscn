@@ -221,4 +221,7 @@ offset_bottom = 40.0
 [node name="EnergyBar" parent="UI" instance=ExtResource("5_p6jpk")]
 
 [node name="Timer" type="Timer" parent="."]
+autostart = true
 script = ExtResource("7_xlvfx")
+
+[connection signal="timeout" from="Timer" to="Sleepcontroller" method="_on_timer_timeout"]

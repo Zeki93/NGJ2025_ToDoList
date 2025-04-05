@@ -18,6 +18,7 @@ config/features=PackedStringArray("4.4", "Forward Plus")
 
 SignalBus="*res://Globals/signal_bus.gd"
 GlobalConfig="*res://Globals/global_config.gd"
+Sleeptransition="*res://Components/Sleep/sleeptransition.tscn"
 
 [display]
 
