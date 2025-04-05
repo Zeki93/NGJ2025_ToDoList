@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://cq6cowdgfuf6u"]
+
+[ext_resource type="Theme" uid="uid://dmxn3myerqldl" path="res://Theme/design_theme.tres" id="1_feto0"]
+[ext_resource type="Script" path="res://Components/UI/to_do_list.gd" id="1_kyyg4"]
+[ext_resource type="PackedScene" path="res://Components/UI/ToDoItem.tscn" id="2_kyyg4"]
+
+[node name="ToDoListPage" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_kyyg4")
+
+[node name="ToDoPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 1700.0
+offset_right = 1920.0
+offset_bottom = 220.0
+theme = ExtResource("1_feto0")
+theme_type_variation = &"Panel"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ToDoPanel"]
+layout_mode = 0
+offset_right = 220.0
+offset_bottom = 40.0
+bbcode_enabled = true
+text = "[b]TO DO[/b]"
+
+[node name="ToDoItems Container" type="VBoxContainer" parent="ToDoPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ToDoItem" parent="ToDoPanel/ToDoItems Container" instance=ExtResource("2_kyyg4")]
+layout_mode = 2
+text = ""

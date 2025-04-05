@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ny76v8opohe2"
+path="res://.godot/imported/CoffeeCup1.obj-e9fe479375e6d9ddf67eceb66ad5438c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/CoffeeCup1.obj-e9fe479375e6d9ddf67eceb66ad5438c.mesh"]
+
+source_file="res://3D Objects/ZSKY/CoffeeCup1.obj"
+dest_files=["res://.godot/imported/CoffeeCup1.obj-e9fe479375e6d9ddf67eceb66ad5438c.mesh", "res://.godot/imported/CoffeeCup1.obj-e9fe479375e6d9ddf67eceb66ad5438c.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
