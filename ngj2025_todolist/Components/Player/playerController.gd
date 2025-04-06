@@ -21,6 +21,8 @@ var wobble_time = 0.0
 var viewed_object = null
 var active_scene = null
 
+var can_interact:bool = true
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
@@ -74,5 +76,11 @@ func _input(event):
 		if viewed_object and viewed_object.global_position.distance_to(player.global_position) <= max_interact_distance:
 			selected_object = viewed_object
 		
-		if  selected_object and selected_object.has_method("do_task"):
+		if  selected_object and selected_object.has_method("do_task") and can_interact:
 			selected_object.do_task()
+			can_interact = false
+			var timer = get_tree().create_timer(1.0)
+			timer.timeout.connect(_set_can_interact)
+
+func _set_can_interact():
+	can_interact = true
