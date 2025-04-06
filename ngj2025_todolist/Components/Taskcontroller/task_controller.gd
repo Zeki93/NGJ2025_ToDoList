@@ -5,7 +5,7 @@ var currentTaskArray = []
 var completedSpecialTasks = 0
 
 var days = 1
-var peneltyCost = 10
+var peneltyCost = 5
 
 func _ready():
 	SignalBus.taskcontroller_add_random_task.connect(add_random_task)
