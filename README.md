@@ -6,4 +6,4 @@ Sofie,
 Zeki
 
 Credits to Zsky, for some of the 3D Assets used in this game <3
-https://zsky2000.itch.io/ 
+https://zsky2000.itch.io/ultimate-interior-props
