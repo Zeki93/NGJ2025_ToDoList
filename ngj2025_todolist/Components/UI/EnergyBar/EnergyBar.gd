@@ -4,6 +4,7 @@ extends Node
 
 func _ready() -> void:
 	SignalBus.new_energy_level.connect(_on_new_energy_level)
+	show_energy(GlobalConfig.playerEnergy)
 	
 func _on_new_energy_level(energy):
 	show_energy(energy)

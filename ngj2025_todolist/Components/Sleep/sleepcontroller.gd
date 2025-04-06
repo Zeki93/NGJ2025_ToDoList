@@ -1,6 +1,6 @@
 extends Node3D
 
-@export var tiredNess = 0.1
+@export var tiredNess = 0.5
 @export var energyRecoveryOnFloor = 50
 var sleeping = false
 
@@ -8,7 +8,6 @@ func _ready() -> void:
 	SignalBus.new_energy_level.connect(_on_new_energy_level)
 	SignalBus.go_to_sleep.connect(_on_go_to_sleep)
 	SignalBus.on_sleeptransition_finished
-	SignalBus.new_energy_level.emit(100)
 	pass
 
 func _process(delta: float) -> void:

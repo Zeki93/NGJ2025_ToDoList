@@ -1545,7 +1545,6 @@ skeleton = NodePath("../../../Taskcontroller/ReadTheBook")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -1)
 
 [node name="Sleepcontroller" parent="." instance=ExtResource("5_xlvfx")]
-tiredNess = 0.5
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
