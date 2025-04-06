@@ -1545,7 +1545,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -1)
 
 [node name="Sleepcontroller" parent="." instance=ExtResource("5_xlvfx")]
 tiredNess = 0.5
-energyRecoveryOnFloor = 100
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
@@ -1589,7 +1588,7 @@ script = ExtResource("8_hfg1r")
 [node name="ReadTheBook" type="StaticBody3D" parent="Taskcontroller"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.86306, 2.14379, 10.6629)
 script = ExtResource("9_4e4y2")
-cost = 60
+cost = 50
 task_name = "Read the secret book"
 special = true
 metadata/_custom_type_script = "uid://il2mj2e7ekms"
@@ -1605,7 +1604,7 @@ shape = SubResource("ConcavePolygonShape3D_wliom")
 [node name="ReadTheBook2" type="StaticBody3D" parent="Taskcontroller"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 10.3486, 1.83898, 6.7255)
 script = ExtResource("9_4e4y2")
-cost = 60
+cost = 50
 task_name = "Read the secret book"
 special = true
 metadata/_custom_type_script = "uid://il2mj2e7ekms"
@@ -1638,12 +1637,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.44631, 5, 10.576)
 
 [node name="Water_plant2" parent="Taskcontroller" instance=ExtResource("14_vk4q2")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 9.44631, 0, 1.576)
-cost = 55
+cost = 40
 special = true
 
 [node name="Airfryer" parent="Taskcontroller" instance=ExtResource("16_koken")]
 transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 0.435094, 2, 4)
-cost = 25
+cost = 20
 
 [node name="Fridge" parent="Taskcontroller" instance=ExtResource("17_koken")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -3.45791, 1.76416, 3.69015)
@@ -1658,23 +1657,24 @@ task_name = "Clean the mini fridge"
 
 [node name="Gasstove" parent="Taskcontroller" instance=ExtResource("18_es6iu")]
 transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 0.623476, 1.85282, 8.24281)
-cost = 50
+cost = 35
 task_name = "Make a chicken dinner!"
 special = true
 
 [node name="Dishwasher" parent="Taskcontroller" instance=ExtResource("19_c4b4r")]
 transform = Transform3D(-1.09278e-07, 0, -2.5, 0, 2, 0, 2.5, 0, -1.09278e-07, 0.755365, 1.22629, 10)
-cost = 40
+cost = 25
 task_name = "Wash dishes"
 
 [node name="Milk" parent="Taskcontroller" instance=ExtResource("25_ah3if")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.26134, 1.39046, 10.3585)
+cost = 15
 special = true
 
 [node name="CookingRecipe" type="StaticBody3D" parent="Taskcontroller"]
 transform = Transform3D(-0.97962, -0.00421509, -0.200817, -0.00473888, 0.999987, 0.00212763, 0.200805, 0.00303591, -0.979627, -5.21601, 2.29365, 10.5033)
 script = ExtResource("9_4e4y2")
-cost = 60
+cost = 45
 task_name = "Read the recipe"
 special = true
 metadata/_custom_type_script = "uid://il2mj2e7ekms"
@@ -1711,7 +1711,7 @@ shape = SubResource("ConcavePolygonShape3D_bnc1s")
 [node name="NGJ2025" type="StaticBody3D" parent="Taskcontroller"]
 transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.55671e-08, -9.38745, 5.64468, -8.80146)
 script = ExtResource("9_4e4y2")
-cost = 100
+cost = 80
 task_name = "Make a game for NGJ2025"
 special = true
 metadata/_custom_type_script = "uid://il2mj2e7ekms"
