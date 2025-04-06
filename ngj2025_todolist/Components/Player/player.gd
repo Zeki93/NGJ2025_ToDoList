@@ -8,6 +8,9 @@ var acceleration = Vector3(0.0, -gravity, 0.0)
 @export var air_drag = 2
 var sleeping = false
 
+var is_walking = false
+var walking_threshold = 2.00
+
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	SignalBus.go_to_sleep.connect(_on_go_to_sleep)
@@ -30,6 +33,14 @@ func check_player_movement(delta):
 		drag_factor = air_drag * delta
 	drag_factor = clampf(1.0 - drag_factor, 0.0, 1.0)
 	velocity *= drag_factor
+	# quick and dirty "are we moving check"
+	var len = self.velocity.length()
+	if is_walking && len < walking_threshold:
+		is_walking = false
+		SignalBus.sfx_walk_stop.emit()
+	if not is_walking && len > walking_threshold:
+		is_walking = true
+		SignalBus.sfx_walk_play.emit()
 	move_and_slide()
 
 func on_end_game():

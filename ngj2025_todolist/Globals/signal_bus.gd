@@ -18,3 +18,9 @@ signal ui_clear_completed_tasks()
 
 signal win_game()
 signal loose_game()
+
+#Audio
+signal sfx_walk_play
+signal sfx_walk_stop
+signal sfx_success
+signal sfx_error
