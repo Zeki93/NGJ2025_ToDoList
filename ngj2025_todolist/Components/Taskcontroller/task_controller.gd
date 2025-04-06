@@ -5,6 +5,7 @@ var currentTaskArray = []
 var completedSpecialTasks = 0
 
 var days = 1
+var maxTask = 4
 var peneltyCost = 5
 
 func _ready():
@@ -17,15 +18,19 @@ func _ready():
 		if(child.canBeAddedTodo):
 			allTaskArray.push_front(child)
 	
-	for i in range (3):
+	for i in range (4):
 		add_random_task()
 
 func on_go_to_sleep():
 	days += 1
+	var tasksToAdd = maxTask
+	if(days < maxTask):
+		tasksToAdd = days
+	
 	if(currentTaskArray.size() >= GlobalConfig.uncompletedTasksToLoose):
 		SignalBus.loose_game.emit()
 	else:
-		for i in range (days):
+		for i in range (tasksToAdd):
 			add_random_task()
 			SignalBus.ui_clear_completed_tasks.emit()
 
@@ -53,5 +58,5 @@ func complete_task(task):
 	SignalBus.ui_complete_task.emit(task.task_name)
 	if(task.special): 
 		completedSpecialTasks+= 1
-	if(completedSpecialTasks >= GlobalConfig.completedTasksToWin && currentTaskArray.size() == 0):
+	if(currentTaskArray.size() == 0):
 		SignalBus.win_game.emit()
