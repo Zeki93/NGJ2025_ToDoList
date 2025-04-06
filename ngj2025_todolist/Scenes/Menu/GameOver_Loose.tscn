@@ -48,7 +48,7 @@ layout_mode = 2
 layout_mode = 2
 theme = ExtResource("2_ot1cf")
 theme_type_variation = &"HeaderLarge"
-text = "Too much todo?"
+text = "Too Much To Do!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -56,7 +56,7 @@ vertical_alignment = 1
 layout_mode = 2
 theme = ExtResource("2_ot1cf")
 theme_type_variation = &"HeaderMedium"
-text = "- The ToDo List Game"
+text = "Your ToDo List Grew Too Big"
 horizontal_alignment = 1
 vertical_alignment = 1
 
