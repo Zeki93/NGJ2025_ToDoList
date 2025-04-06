@@ -53,5 +53,5 @@ func complete_task(task):
 	SignalBus.ui_complete_task.emit(task.task_name)
 	if(task.special): 
 		completedSpecialTasks+= 1
-	if(GlobalConfig.completedTasksToWin >= 3 && currentTaskArray.size() == 0):
+	if(completedSpecialTasks >= GlobalConfig.completedTasksToWin && currentTaskArray.size() == 0):
 		SignalBus.win_game.emit()
