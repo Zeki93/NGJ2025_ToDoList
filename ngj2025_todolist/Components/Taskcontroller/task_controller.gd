@@ -13,8 +13,9 @@ func _ready():
 	SignalBus.taskcontroller_do_task.connect(do_task)
 	SignalBus.taskcontroller_go_to_sleep.connect(on_go_to_sleep)
 	
-	for child in self.get_children():
-		allTaskArray.push_front(child)
+	for child: Task in self.get_children():
+		if(child.canBeAddedTodo):
+			allTaskArray.push_front(child)
 	
 	for i in range (3):
 		add_random_task()

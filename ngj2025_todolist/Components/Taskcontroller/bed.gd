@@ -2,10 +2,12 @@ extends Task
 
 class_name Bed
 
+
 @export var sleepRecovery = 70
 
 func _ready() -> void:
 	task_name = "Go to sleep"
+	canBeAddedTodo = false
 
 func do_task():
 	SignalBus.go_to_sleep.emit(sleepRecovery)
