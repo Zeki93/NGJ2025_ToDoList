@@ -1,0 +1,64 @@
+[gd_resource type="VisualShader" load_steps=7 format=3 uid="uid://u5xjmivbgdda"]
+
+[ext_resource type="Texture2D" uid="uid://bpko0bpnaqy08" path="res://3D Objects/SeaAngel/SeaAngelAlpha.png" id="1_3rllf"]
+[ext_resource type="Texture2D" uid="uid://cn6l4i1ul1o3a" path="res://3D Objects/SeaAngel/SeaAngelColor.png" id="2_y17ef"]
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_qy3b0"]
+expanded_output_ports = [0]
+texture = ExtResource("1_3rllf")
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_w3h1e"]
+texture = ExtResource("2_y17ef")
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_3rllf"]
+operator = 2
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_3rllf"]
+default_input_values = [0, 0.0, 1, 1.5]
+operator = 2
+
+[resource]
+code = "shader_type spatial;
+render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx;
+
+uniform sampler2D tex_frg_4;
+uniform sampler2D tex_frg_3;
+
+
+
+void fragment() {
+// Texture2D:4
+	vec4 n_out4p0 = texture(tex_frg_4, UV);
+
+
+// Texture2D:3
+	vec4 n_out3p0 = texture(tex_frg_3, UV);
+	float n_out3p1 = n_out3p0.r;
+
+
+// FloatOp:6
+	float n_in6p1 = 1.50000;
+	float n_out6p0 = n_out3p1 * n_in6p1;
+
+
+// VectorOp:5
+	vec3 n_out5p0 = vec3(n_out6p0) * vec3(n_out4p0.xyz);
+
+
+// Output:0
+	ALBEDO = vec3(n_out4p0.xyz);
+	ALPHA = n_out3p0.x;
+	EMISSION = n_out5p0;
+
+
+}
+"
+nodes/fragment/3/node = SubResource("VisualShaderNodeTexture_qy3b0")
+nodes/fragment/3/position = Vector2(-960, 380)
+nodes/fragment/4/node = SubResource("VisualShaderNodeTexture_w3h1e")
+nodes/fragment/4/position = Vector2(-460, -80)
+nodes/fragment/5/node = SubResource("VisualShaderNodeVectorOp_3rllf")
+nodes/fragment/5/position = Vector2(100, 540)
+nodes/fragment/6/node = SubResource("VisualShaderNodeFloatOp_3rllf")
+nodes/fragment/6/position = Vector2(-380, 600)
+nodes/fragment/connections = PackedInt32Array(3, 0, 0, 1, 4, 0, 0, 0, 4, 0, 5, 1, 5, 0, 0, 5, 3, 1, 6, 0, 6, 0, 5, 0)

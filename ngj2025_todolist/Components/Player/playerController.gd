@@ -79,8 +79,10 @@ func _input(event):
 		if  selected_object and selected_object.has_method("do_task") and can_interact:
 			selected_object.do_task()
 			can_interact = false
-			var timer = get_tree().create_timer(1.0)
-			timer.timeout.connect(_set_can_interact)
+			var tree = get_tree()
+			if tree:
+				var timer = get_tree().create_timer(1.0)
+				timer.timeout.connect(_set_can_interact)
 
 func _set_can_interact():
 	can_interact = true
