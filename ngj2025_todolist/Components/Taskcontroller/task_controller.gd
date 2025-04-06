@@ -45,8 +45,10 @@ func do_task(task):
 			return
 	GlobalConfig.playerEnergy -= peneltyCost
 	SignalBus.new_energy_level.emit(GlobalConfig.playerEnergy)
+	SignalBus.sfx_error.emit()
 
 func complete_task(task):
+	SignalBus.sfx_success.emit()
 	currentTaskArray.erase(task)
 	SignalBus.ui_complete_task.emit(task.task_name)
 	if(task.special): 
