@@ -16,5 +16,5 @@ signal ui_task_added(task_name:String)
 signal ui_complete_task(task_name: String)
 signal ui_clear_completed_tasks()
 
-signal winGame()
-signal looseGame()
+signal win_game()
+signal loose_game()

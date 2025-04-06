@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://uprh1dv4mhsj"]
+[gd_scene load_steps=55 format=3 uid="uid://uprh1dv4mhsj"]
 
 [ext_resource type="PackedScene" uid="uid://fspikrmy6ish" path="res://Components/House/wall.tscn" id="1_1r6ip"]
 [ext_resource type="PackedScene" uid="uid://behmq4ilq0dq6" path="res://Components/House/floor.tscn" id="1_lixft"]
@@ -41,6 +41,7 @@
 [ext_resource type="ArrayMesh" uid="uid://dboevxm5krqgm" path="res://3D Objects/ZSKY/Smartphone1.obj" id="38_h4gp5"]
 [ext_resource type="ArrayMesh" uid="uid://dbhk2t7kxmbl" path="res://3D Objects/ZSKY/Keyboard1.obj" id="39_gw1lt"]
 [ext_resource type="Script" uid="uid://crbdf5y8s3tt8" path="res://Components/Taskcontroller/bed.gd" id="40_37bn8"]
+[ext_resource type="Script" uid="uid://c3ioromcdklde" path="res://Components/Scenecontroller/scene_controller.gd" id="42_gw8t2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qw60k"]
 sky_top_color = Color(0.519352, 0.690558, 0.915113, 1)
@@ -1723,5 +1724,8 @@ skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Taskcontroller/Bed"]
 shape = SubResource("ConcavePolygonShape3D_2ok46")
+
+[node name="SceneController" type="Node3D" parent="."]
+script = ExtResource("42_gw8t2")
 
 [connection signal="timeout" from="Timer" to="Sleepcontroller" method="_on_timer_timeout"]

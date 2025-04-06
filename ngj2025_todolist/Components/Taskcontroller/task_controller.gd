@@ -23,7 +23,7 @@ func _ready():
 func on_go_to_sleep():
 	days += 1
 	if(currentTaskArray.size() >= GlobalConfig.uncompletedTasksToLoose):
-		SignalBus.looseGame.emit()
+		SignalBus.loose_game.emit()
 	else:
 		for i in range (days):
 			add_random_task()
@@ -52,4 +52,4 @@ func complete_task(task):
 	if(task.special): 
 		completedSpecialTasks+= 1
 	if(GlobalConfig.completedTasksToWin >= 3 && currentTaskArray.size() == 0):
-		SignalBus.winGame.emit()
+		SignalBus.win_game.emit()

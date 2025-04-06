@@ -1,5 +1,6 @@
 extends Node
 
-var playerEnergy = 50
+var playerStartEnergy = 60
+var playerEnergy = 60
 var completedTasksToWin = 3
 var uncompletedTasksToLoose = 5

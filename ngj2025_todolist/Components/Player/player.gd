@@ -12,6 +12,8 @@ func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	SignalBus.go_to_sleep.connect(_on_go_to_sleep)
 	SignalBus.wake_up.connect(_on_wake_up)
+	SignalBus.loose_game.connect(on_end_game)
+	SignalBus.win_game.connect(on_end_game)
 
 func _physics_process(delta):
 	if(sleeping):
@@ -29,6 +31,9 @@ func check_player_movement(delta):
 	drag_factor = clampf(1.0 - drag_factor, 0.0, 1.0)
 	velocity *= drag_factor
 	move_and_slide()
+
+func on_end_game():
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 func _on_go_to_sleep(energy):
 	sleeping = true
