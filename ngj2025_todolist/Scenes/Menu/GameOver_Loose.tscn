@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://buogigcomy18d"]
 
-[ext_resource type="Texture2D" uid="uid://cllhqljgq6j1s" path="res://Textures/Menu_loose_background.jpg" id="1_ehoic"]
+[ext_resource type="Texture2D" uid="uid://cllhqljgq6j1s" path="res://Textures/menu_loose_background.jpg" id="1_ehoic"]
 [ext_resource type="Theme" uid="uid://dmxn3myerqldl" path="res://Theme/design_theme.tres" id="2_ot1cf"]
 [ext_resource type="Script" uid="uid://b5a2jhe8m5pg3" path="res://Scenes/Menu/start_game.gd" id="3_1hew1"]
 
