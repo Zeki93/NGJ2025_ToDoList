@@ -11,7 +11,8 @@ func _ready() -> void:
 	SignalBus.connect("ui_task_added", _add_task)
 	SignalBus.connect("ui_complete_task", _complete_task)
 	SignalBus.connect("ui_clear_completed_tasks", _clear_completed_tasks)
-
+	_add_task("Go to sleep")
+	
 func _add_task(task_name:String):
 	if task_list.has(task_name):
 		return

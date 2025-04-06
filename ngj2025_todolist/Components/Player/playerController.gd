@@ -15,7 +15,7 @@ extends Node
 @export var air_acceleration = 10
 @export var mouse_sensitivity = 0.002
 @export var jump_speed = 4.5
-@export var max_interact_distance = 2
+@export var max_interact_distance = 5
 
 var wobble_time = 0.0
 var viewed_object = null
